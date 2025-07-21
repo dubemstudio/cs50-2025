@@ -1,3 +1,4 @@
+// displays the number of change
 #include <stdio.h>
 
 // Function Prototypes
@@ -50,14 +51,12 @@ int main(void)
 }
 
 // Converts a dollar amount to cents (rounded)
-int convertToCents(float dollars)
-{
+int convertToCents(float dollars){
   return (int)(dollars * 100 + 0.5); 
 }
 
 // Calculates the number of quarters in given cents
-int calculateQuarters(int cents)
-{
+int calculateQuarters(int cents){
   return cents / 25;
 }
 

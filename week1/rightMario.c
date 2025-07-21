@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 // Function prototype to print each row of the pyramid
 void printRow(int totalHeight, int currentRow);
@@ -7,22 +8,33 @@ void printRow(int totalHeight, int currentRow);
 //main
 int main(void)
 {
-  char buffer[10];
+  char buffer[5];
   int height;
   int success;
 
   // Get user input
-  do{
-    printf("Enter Height: ");
+ do{
+  printf("Enter Height (1-100): ");
 
-    if(!fgets(buffer, sizeof(buffer), stdin)){
-      printf("Reading error!\n");
-    }
-    
-    success = sscanf(buffer, "%d", &height);
-  } while (success != 1);
+  if(!fgets(buffer, sizeof(buffer), stdin)){
+    printf("Reading Failed!\n");
+    return 1;
+  }
 
-  // Print each row of the pyramid
+  if(!strchr(buffer, '\n')){
+    printf("Input too long.\n");
+
+    int ch;
+    while((ch = getchar()) != '\n' && ch != EOF) {}
+    continue;
+  }
+
+  char extra;
+  success = sscanf(buffer, "%d %c", &height, &extra);
+
+ } while(success != 1 || height > 100);
+
+  // Print rows of increasing length
   for (int i = 0; i < height; i++){
     printRow(height, i + 1);
   }

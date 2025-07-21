@@ -1,17 +1,37 @@
 #include <stdio.h>
+#include <string.h>
 
 // Function Prototype
 void printRow(int pyramidHeight, int currentRow);
 
 int main(void)
 {
+  char buffer[5];
   int height;
+  int success;
 
   // Hardcoded value for now (can be replaced with user input)
   do
   {
-    height = 10;
-  } while (height < 1);
+    printf("Enter Height (1-100): ");
+
+    if(!fgets(buffer, sizeof(buffer), stdin)){
+      printf("Reading Failed!\n");
+      return 1;
+    }
+
+    if(!strchr(buffer, '\n')){
+      printf("Input too long.\n");
+
+      int ch;
+      while((ch = getchar()) != '\n' && ch != EOF){}
+      continue;
+    }
+
+    char extra;
+    success = sscanf(buffer, "%d %c", &height, &extra);
+
+  } while (success != 1 || height > 100);
 
   // Print each row of the pyramid
   for (int i = 0; i < height; i++)
