@@ -1,8 +1,8 @@
-# 💻 CS50: Introduction to Computer Science — My Solutions
+# 💻 CS50: Introduction to Computer Science | My Solutions
 
 This repository contains my personal solutions to the problem sets from **Harvard's CS50** course. Each program is written in **C**, thoughtfully structured, cleanly commented, and progressively improved as I deepen my understanding.
 
-> ✅ **Completed:** Week 0 – Week 3
+> ✅ **Completed:** Week 0 - Week 3
 > 🔄 Ongoing refinement as I continue through the course
 
 ---
@@ -35,8 +35,8 @@ week2/
 
 ```
 week3/
-├── tideman.c              # Ranked-choice voting using Tideman algorithm
 ├── plurality.c            # Plurality voting system
+├── tideman.c              # Ranked-choice voting using Tideman algorithm
 ├── runoff.c               # Runoff voting with elimination rounds
 ```
 
