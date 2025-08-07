@@ -1,3 +1,14 @@
+# ignore all except c files
+*
+
+!*.c
+
+!*/
+
+!answers.txt
+
 /practice/
-/week3/sort/
-*.exe
+
+
+!.gitignore
+
