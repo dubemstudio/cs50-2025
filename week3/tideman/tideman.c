@@ -205,6 +205,24 @@ void lock_pairs(void)
 void print_winner(void)
 {
     // TODO
+    for(int i = 0; i < candidate_count; i++)
+    {
+        bool is_winner = true;
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if(locked[j][i] == true)
+            {
+                is_winner = false;
+                break;
+            }
+        }
+        if(is_winner == true)
+        {
+            printf("%s\n", candidates[i]);
+        }
+        
+    }
+
     return;
 }
 
