@@ -21,13 +21,15 @@ int main(int argc, char *argv[])
 
   // open card file
   FILE *card = fopen(argv[1], "r");
-  if(card == NULL){
+  if(card == NULL)
+  {
     printf("Could not open file\n");
     return 1;
   }
 
+  // read 512bytes of memory from card
+  while(fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
+  {
 
-  while(fread(buffer, BLOCK_SIZE, 1, card) != 0){
-    
   }
 }
